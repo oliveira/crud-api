@@ -1,14 +1,19 @@
 const express = require('express');
-const bodyParser  = require('body-parser');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+
+const User = require('./models/users');
+const mongooseConnect = require('./db');
+const controllers = require('./controllers');
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(controllers);
 
-app.get('/', function(req, res){
-    res.send('here we go!');
-});
- 
+mongooseConnect();
+
 app.listen(3000, function(){
     console.log('App running on 3000');
 });
