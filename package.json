@@ -1,0 +1,31 @@
+{
+  "name": "desafio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliveir4/desafio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "express": "^4.16.1",
+    "jsonwebtoken": "^7.4.3",
+    "mocha": "^4.0.0",
+    "mongoose": "^4.12.0"
+  },
+  "bugs": {
+    "url": "https://github.com/oliveir4/desafio/issues"
+  },
+  "homepage": "https://github.com/oliveir4/desafio#readme",
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "nodemon": "^1.12.1"
+  }
+}
