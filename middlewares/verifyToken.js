@@ -3,12 +3,20 @@ var jwt = require('jsonwebtoken');
 module.exports = (req, res, next) => {
   if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
     const token = req.headers.authorization.split(' ')[1];
-    jwt.verify(token, 'S3cr37', function(err, decoded) {
-        if (err) {
-            return res.json({"error": true});
+    jwt.verify(token, 'S3cr37', (err, decoded) => {
+      if (err) {
+        if (err.name === 'TokenExpiredError') {
+          return res.status(401).send({
+              "message": "Session expired"
+          });
+        } else {
+          return res.status(403).send({
+              "message": "Unauthorized"
+          });
         }
-        req.decoded = decoded;
-        next();
+      }
+      req.decoded = decoded;
+      next();
     });
   } else {
       return res.status(403).send({
