@@ -5,4 +5,8 @@ const makeHash = async (password) => {
   return await bcrypt.hash(password, salt);
 }
 
-module.exports = makeHash;
+const compareHash = async (password, hash) => {
+  return await bcrypt.compareSync(password, hash);
+}
+
+module.exports = { makeHash, compareHash };
