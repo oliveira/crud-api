@@ -6,7 +6,9 @@ module.exports = mongoose.model('User', new Schema({
     email: String,
     email: String,
     password: String,
+    token: String,
     phones: [String],
     created: { type: Date, required: true, default: Date.now },
-    updated: { type: Date, required: true, default: Date.now }
+    updated: { type: Date, required: true, default: Date.now },
+    last_login: { type: Date, required: true, default: Date.now }
 }));
