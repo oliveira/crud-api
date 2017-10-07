@@ -10,7 +10,7 @@ router.post('/signup', async (req, res) => {
     const findUser = await User.findOne({ email });
 
     if (findUser) {
-      res.json({ message: 'Email is already in use' });
+      res.json({ message: "Email is already in use" });
       return;
     }
 
@@ -25,8 +25,8 @@ router.post('/signup', async (req, res) => {
       return res.json({ message: {
         "id": data.id,
         "created": data.created,
-        "updated":data.updated,
-        "last_login":data.last_login
+        "updated": data.updated,
+        "last_login": data.last_login
       } });
    });
 });
