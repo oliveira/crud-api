@@ -14,6 +14,6 @@ app.use(controllers);
 
 mongooseConnect();
 
-app.listen(3000, function(){
-    console.log('App running on 3000');
+app.listen(3000, () => {
+  console.log('App running on 3000');
 });
