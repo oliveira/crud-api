@@ -29,7 +29,7 @@ router.post('/api/signup', async(req, res) => {
     token: token
   });
 
-  await user.save((err, data) => {
+  await user.save(() => {
 
     return res.status(201)
       .send({

@@ -39,8 +39,6 @@ router.post('/api/signin', async(req, res) => {
           token: token
         });
 
-      return res.status(500)
-        .send({ message: 'Internal Server Error' });
     }
   }
 
